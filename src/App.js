@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import NoteList from './components/NoteList';
+import NoteEditor from './components/NoteEditor';
 
 function App() {
+  const [notes, setNotes] = useState([]);
+
+  const addNote = (newNote) => {
+    setNotes([...notes, newNote]);
+  };
+
+  const deleteNote = (noteId) => {
+    setNotes(notes.filter(note => note.id !== noteId));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>My Note Taking App</h1>
+      <NoteList notes={notes} onDelete={deleteNote} />
+      <NoteEditor onAdd={addNote} />
     </div>
   );
 }
