@@ -1,41 +1,28 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import './App.css';
+import NoteList from './components/NoteList';
+import NoteEditor from './components/NoteEditor';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-// Path: src/index.js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+function App() {
+  const [notes, setNotes] = React.useState([]);
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-// Path: src/index.js
-// Compare this snippet from src/NoteList.js:
-// import React from 'react';
+  const addNote = (note) => {
+    setNotes([...notes, note]);
+  };
 
-function NoteList({ notes, onDelete }) {
+  const deleteNote = (id) => {
+    setNotes(notes.filter(note => note.id !== id));
+  };
+
   return (
-    <ul>
-      {notes.map(note => (
-        <li key={note.id}>
-          {note.content}
-          <button onClick={() => onDelete(note.id)}>Delete</button>
-        </li>
-      ))}
-    </ul>
+    <div className="App">
+      <header className="App-header">
+        <h1>Notes</h1>
+        <NoteEditor addNote={addNote} />
+        <NoteList notes={notes} onDelete={deleteNote} />
+      </header>
+    </div>
   );
 }
 
-export default NoteList;
-// Compare this snippet from src/App.js:
-
+export default App;
