@@ -1,4 +1,3 @@
-// App.js
 import React, { useState } from 'react';
 import NoteList from './components/NoteList';
 import NoteEditor from './components/NoteEditor';
@@ -6,12 +5,12 @@ import NoteEditor from './components/NoteEditor';
 function App() {
   const [notes, setNotes] = useState([]);
 
-  const addNote = (note) => {
-    setNotes([...notes, note]);
+  const addNote = (newNote) => {
+    setNotes([...notes, newNote]);
   };
 
-  const deleteNote = (id) => {
-    setNotes(notes.filter(note => note.id !== id));
+  const deleteNote = (noteId) => {
+    setNotes(notes.filter(note => note.id !== noteId));
   };
 
   return (
