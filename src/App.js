@@ -3,6 +3,7 @@ import './App.css'; // Ensure this line is present and not inside conflict marke
 import NoteList from './components/NoteList';
 import NoteEditor from './components/NoteEditor';
 import Header from './components/Header';
+import './App.css';
 
 function App() {
   const [notes, setNotes] = useState([]);
