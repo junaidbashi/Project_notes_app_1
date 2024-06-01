@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import NoteList from './components/NoteList';
 import NoteEditor from './components/NoteEditor';
 import Header from './components/Header';
-<<<<<<< HEAD
 import './App.css';
-=======
->>>>>>> 7390dc2db4ac1c781642e56a74b7b0591e8914ac
 
 function App() {
   const [notes, setNotes] = useState([]);
