@@ -1,28 +1,14 @@
 import React from 'react';
-import './App.css';
-import NoteList from './components/NoteList';
-import NoteEditor from './components/NoteEditor';
+import ReactDOM from 'react-dom';
+import './index.css'; // Assuming you have a separate index.css for global styles
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-function App() {
-  const [notes, setNotes] = React.useState([]);
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-  const addNote = (note) => {
-    setNotes([...notes, note]);
-  };
-
-  const deleteNote = (id) => {
-    setNotes(notes.filter(note => note.id !== id));
-  };
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Notes</h1>
-        <NoteEditor addNote={addNote} />
-        <NoteList notes={notes} onDelete={deleteNote} />
-      </header>
-    </div>
-  );
-}
-
-export default App;
+reportWebVitals();
