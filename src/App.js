@@ -16,11 +16,7 @@ function App() {
 
   return (
     <div>
-<<<<<<< HEAD
       <h1>{Header()}</h1>
-=======
-      <h1>Note Taking App for Niggers</h1>
->>>>>>> 5da22bab8fa42b5a1b3ea38533646b9844afcc70
       <NoteList notes={notes} onDelete={deleteNote} />
       <NoteEditor onAdd={addNote} />
     </div>
