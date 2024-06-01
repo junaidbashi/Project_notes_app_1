@@ -21,7 +21,7 @@ test('renders add note button', () => {
   render(<App />);
   const linkElement = screen.getByText(/Add Note/i);
   expect(linkElement).toBeInTheDocument();
-}
+});
 // Path: src/App.test.js
 // Import necessary libraries for testing
 import { render, screen } from '@testing-library/react';
