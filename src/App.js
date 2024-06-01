@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import NoteList from './components/NoteList';
 import NoteEditor from './components/NoteEditor';
 import Header from './components/Header';
+import './App.css';
 
 function App() {
   const [notes, setNotes] = useState([]);
