@@ -1,13 +1,11 @@
 import React from 'react';
+import Note from './Note';
 
 function NoteList({ notes, onDelete }) {
   return (
     <ul>
       {notes.map(note => (
-        <li key={note.id}>
-          {note.content}
-          <button onClick={() => onDelete(note.id)}>Delete</button>
-        </li>
+        <Note key={note.id} note={note} onDelete={onDelete} />
       ))}
     </ul>
   );
