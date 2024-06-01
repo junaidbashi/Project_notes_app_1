@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div>
-      <h1>My Note Taking App</h1>
+      <h1>Note Taking App for Niggers</h1>
       <NoteList notes={notes} onDelete={deleteNote} />
       <NoteEditor onAdd={addNote} />
     </div>
