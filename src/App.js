@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
+import './App.css'; // Ensure this line is present and not inside conflict markers
 import NoteList from './components/NoteList';
 import NoteEditor from './components/NoteEditor';
 import Header from './components/Header';
-<<<<<<< HEAD
-import './App.css';
-=======
->>>>>>> 7390dc2db4ac1c781642e56a74b7b0591e8914ac
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -19,10 +16,12 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>{Header()}</h1>
-      <NoteList notes={notes} onDelete={deleteNote} />
-      <NoteEditor onAdd={addNote} />
+    <div className="container">
+      <div className="card">
+        <Header />
+        <NoteList notes={notes} onDelete={deleteNote} />
+        <NoteEditor onAdd={addNote} />
+      </div>
     </div>
   );
 }
